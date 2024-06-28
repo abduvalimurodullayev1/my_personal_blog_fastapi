@@ -4,10 +4,12 @@ from fastapi import Body, Depends, HTTPException, APIRouter
 from passlib.context import CryptContext
 from sqlalchemy.orm import Session
 from starlette.responses import RedirectResponse
-from fastapi import status
+from fastapi import statusfrom dotenv import load_dotenv
 
-github_client_id = 'Ov23liytqPPjfiRWNxv1'
-github_secret_id = '94892adaf1fafa80e7cdfe21ec7c837cacca1d64'
+load_dotenv()
+import os
+github_client_id = os.getenv('github_client_id')
+github_secret_id = os.getenv('github_secret_id')
 from others.database import SessionLocal
 from others.jwt_handler import signJWT
 from others.models import User
