@@ -16,6 +16,7 @@ router = APIRouter(
     tags=['user']
 )
 
+
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 
