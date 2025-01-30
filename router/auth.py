@@ -41,6 +41,7 @@ def user_signup(user: UserSchema = Body(...), db: Session = Depends(get_db)):
     db.refresh(new_user)
 
     return signJWT(new_user.email)
+    
 
 
 def check_user(data: UserLoginSchema, db: Session):
